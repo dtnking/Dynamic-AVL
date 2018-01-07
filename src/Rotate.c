@@ -4,6 +4,7 @@ Node *rotateRight(Node *node){
   Node *temp = node->left;
   node->left = temp->right;
   temp->right = node;
+  node->cummulativeVal -= temp->cummulativeVal;
   return temp;
 }
 
@@ -11,6 +12,7 @@ Node *rotateLeft(Node *node){
   Node *temp = node->right;
   node->right = temp->left;
   temp->left = node;
+  temp->cummulativeVal += node->cummulativeVal;
   return temp;
 }
 
