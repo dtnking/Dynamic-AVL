@@ -14,3 +14,15 @@ Node *createNode(Node *newNode,uint32_t val){
   newNode->cummulativeVal = val;
   return newNode;
 }
+
+int findNode(Node **node,Node *nodeToAdd,int absoluteAddVal){
+  if((*node)->right!=NULL){
+    if((*node)->right->relativeVal + (*node)->cummulativeVal != absoluteAddVal){
+      findNode(&(*node)->right,nodeToAdd,absoluteAddVal);
+    }
+    else{
+      return ((*node)->right->relativeVal);
+    }
+  }
+  return (*node)->relativeVal;
+}
