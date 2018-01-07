@@ -18,15 +18,241 @@ void setUp(void){}
 
 void tearDown(void){}
 
+//scenario 1
 void test_avlAdd_given_5_add_8(void){
   Node *root = &node5;
   initNode(&node5,NULL,NULL,0,5,5);
-  initNode(&node8,NULL,NULL,0,8,8);
-  createNode(&node6,6);
+  createNode(&node8,8);
 
-  avlRelativeAdd(&root,&node6);
+  avlRelativeAdd(&root,&node8,0,node8.cummulativeVal);
 
   TEST_ASSERT_EQUAL_PTR(&node5,root);
-  TEST_ASSERT_EQUAL_PTR(node6.cummulativeVal,6);
+  TEST_ASSERT_EQUAL_PTR(node8.cummulativeVal,3);
+  TEST_ASSERT_EQUAL_PTR(node8.relativeVal,3);
+  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
+  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,5);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node8,1,&node5,5,5);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node8,3,3);
+}
 
+//scenario 2
+void test_avlAdd_given_5_add_3(void){
+  Node *root = &node5;
+  initNode(&node5,NULL,NULL,0,5,5);
+  createNode(&node3,3);
+
+  avlRelativeAdd(&root,&node3,0,node3.cummulativeVal);
+
+  TEST_ASSERT_EQUAL_PTR(&node5,root);
+  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
+  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,3);
+  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
+  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,2);
+  TEST_ASSERT_EQUAL_NODE(&node3,NULL,-1,&node5,2,5);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,3,3);
+}
+
+//scenario 3
+void test_avlAdd_given_5_3_7_add_1(void){
+  Node *root = &node5;
+  initNode(&node5,&node3,&node7,0,2,5);
+  initNode(&node3,NULL,NULL,0,3,3);
+  initNode(&node7,NULL,NULL,0,2,2);
+  createNode(&node1,1);
+
+  avlRelativeAdd(&root,&node1,0,node1.cummulativeVal);
+
+  TEST_ASSERT_EQUAL_PTR(&node5,root);
+  TEST_ASSERT_EQUAL_PTR(node1.cummulativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node1.relativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
+  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node7.cummulativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node7.relativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
+  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,2);
+  TEST_ASSERT_EQUAL_NODE(&node3,&node7,-1,&node5,2,5);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node7,2,2);
+  TEST_ASSERT_EQUAL_NODE(&node1,NULL,-1,&node3,2,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node1,1,1);
+}
+
+//scenario 4
+void test_avlAdd_given_5_3_7_add_4(void){
+  Node *root = &node5;
+  initNode(&node5,&node3,&node7,0,2,5);
+  initNode(&node3,NULL,NULL,0,3,3);
+  initNode(&node7,NULL,NULL,0,2,2);
+  createNode(&node4,4);
+
+  avlRelativeAdd(&root,&node4,0,node4.cummulativeVal);
+
+  TEST_ASSERT_EQUAL_PTR(&node5,root);
+  TEST_ASSERT_EQUAL_PTR(node4.cummulativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node4.relativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
+  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node7.cummulativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node7.relativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
+  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,3);
+  TEST_ASSERT_EQUAL_NODE(&node3,&node7,-1,&node5,1,5);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node7,2,2);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node4,1,&node3,3,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node4,1,1);
+}
+
+//scenario 5
+void test_avlAdd_given_5_3_7_add_6(void){
+  Node *root = &node5;
+  initNode(&node5,&node3,&node7,0,2,5);
+  initNode(&node3,NULL,NULL,0,3,3);
+  initNode(&node7,NULL,NULL,0,2,2);
+  createNode(&node6,6);
+
+  avlRelativeAdd(&root,&node6,0,node6.cummulativeVal);
+
+  TEST_ASSERT_EQUAL_PTR(&node5,root);
+  TEST_ASSERT_EQUAL_PTR(node6.cummulativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node6.relativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
+  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node7.cummulativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node7.relativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
+  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,3);
+  TEST_ASSERT_EQUAL_NODE(&node3,&node7,1,&node5,2,5);
+  TEST_ASSERT_EQUAL_NODE(&node6,NULL,-1,&node7,1,2);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,3,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node6,1,1);
+}
+
+//scenario 6
+void test_avlAdd_given_5_3_7_add_8(void){
+  Node *root = &node5;
+  initNode(&node5,&node3,&node7,0,2,5);
+  initNode(&node3,NULL,NULL,0,3,3);
+  initNode(&node7,NULL,NULL,0,2,2);
+  createNode(&node8,8);
+
+  avlRelativeAdd(&root,&node8,0,node8.cummulativeVal);
+
+  TEST_ASSERT_EQUAL_PTR(&node5,root);
+  TEST_ASSERT_EQUAL_PTR(node8.cummulativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node8.relativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
+  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node7.cummulativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node7.relativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
+  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,3);
+  TEST_ASSERT_EQUAL_NODE(&node3,&node7,1,&node5,2,5);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node8,1,&node7,2,2);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,3,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node8,1,1);
+}
+
+//scenario 7
+void test_avlAdd_given_5_3_add_2_expect_rotate_right(void){
+  Node *root = &node5;
+  initNode(&node5,&node3,NULL,-1,2,5);
+  initNode(&node3,NULL,NULL,0,3,3);
+  createNode(&node2,2);
+
+  avlRelativeAdd(&root,&node2,0,node2.cummulativeVal);
+
+  TEST_ASSERT_EQUAL_PTR(&node3,root);
+  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
+  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,2);
+  TEST_ASSERT_EQUAL_NODE(&node2,&node5,0,&node3,1,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node2,2,2);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node5,2,2);
+}
+
+//scenario 8
+void test_avlAdd_given_5_7_add_10_expect_rotate_left(void){
+  Node *root = &node5;
+  initNode(&node5,NULL,&node7,1,5,5);
+  initNode(&node7,NULL,NULL,0,2,2);
+  createNode(&node10,10);
+
+  avlRelativeAdd(&root,&node10,0,node10.cummulativeVal);
+
+  TEST_ASSERT_EQUAL_PTR(&node7,root);
+  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
+  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,5);
+  TEST_ASSERT_EQUAL_PTR(node7.cummulativeVal,7);
+  TEST_ASSERT_EQUAL_PTR(node7.relativeVal,2);
+  TEST_ASSERT_EQUAL_PTR(node10.cummulativeVal,3);
+  TEST_ASSERT_EQUAL_PTR(node10.relativeVal,3);
+  TEST_ASSERT_EQUAL_NODE(&node5,&node10,0,&node7,2,7);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node5,5,5);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node10,3,3);
+}
+
+//scenario 9
+void test_avlAdd_given_5_3_add_4_expect_rotate_left_right(void){
+  Node *root = &node5;
+  initNode(&node5,&node3,NULL,-1,2,5);
+  initNode(&node3,NULL,NULL,0,3,3);
+  createNode(&node4,4);
+
+  avlRelativeAdd(&root,&node4,0,node4.cummulativeVal);
+
+  TEST_ASSERT_EQUAL_PTR(&node4,root);
+  TEST_ASSERT_EQUAL_PTR(node4.cummulativeVal,4);
+  TEST_ASSERT_EQUAL_PTR(node4.relativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
+  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,3);
+  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,1);
+  TEST_ASSERT_EQUAL_NODE(&node3,&node5,0,&node4,1,4);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,3,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node5,1,1);
+}
+
+//scenario 10
+void test_avlAdd_given_5_7_add_6_expect_rotate_right_left(void){
+  Node *root = &node5;
+  initNode(&node5,NULL,&node7,1,5,5);
+  initNode(&node7,NULL,NULL,0,2,2);
+  createNode(&node6,6);
+
+  avlRelativeAdd(&root,&node6,0,node6.cummulativeVal);
+
+  TEST_ASSERT_EQUAL_PTR(&node6,root);
+  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
+  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,5);
+  TEST_ASSERT_EQUAL_PTR(node7.cummulativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node7.relativeVal,1);
+  TEST_ASSERT_EQUAL_PTR(node6.cummulativeVal,6);
+  TEST_ASSERT_EQUAL_PTR(node6.relativeVal,1);
+  TEST_ASSERT_EQUAL_NODE(&node5,&node7,0,&node6,1,6);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node5,5,5);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node7,1,1);
+}
+
+//scenario 11
+void test_avlAdd_given_6_3_2_4_7_add_5_expect_rotate_left_right(void){
+  Node *root = &node6;
+  initNode(&node6,&node3,&node7,-1,2,6);
+  initNode(&node7,NULL,NULL,0,1,1);
+  initNode(&node3,&node2,&node4,0,1,3);
+  initNode(&node2,NULL,NULL,0,2,2);
+  initNode(&node4,NULL,NULL,0,1,1);
+  createNode(&node5,5);
+
+  avlRelativeAdd(&root,&node5,0,node5.cummulativeVal);
+
+  TEST_ASSERT_EQUAL_PTR(&node4,root);
+  TEST_ASSERT_EQUAL_NODE(&node3,&node6,0,&node4,1,4);
+  TEST_ASSERT_EQUAL_NODE(&node2,NULL,-1,&node3,1,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node2,2,2);
+  TEST_ASSERT_EQUAL_NODE(&node5,&node7,0,&node6,1,2);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node5,1,1);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node7,1,1);
 }
