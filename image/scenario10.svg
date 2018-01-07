@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="761.28242"
-     inkscape:cy="112.85149"
+     inkscape:cx="603.83582"
+     inkscape:cy="141.13576"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -120,7 +120,7 @@
          x="25.2864"
          y="53.668949"
          style="fill:#0000ff;stroke-width:0.22117621"
-         id="tspan1131">-1</tspan></text>
+         id="tspan1131">+1</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot1133"
@@ -162,7 +162,7 @@
            height="120.5"
            x="-13.5"
            y="207.22763" /></flowRegion><flowPara
-         id="flowPara4021"></flowPara></flowRoot>    <flowRoot
+         id="flowPara4021" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4113"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -173,7 +173,7 @@
            height="172"
            x="205"
            y="91.227631" /></flowRegion><flowPara
-         id="flowPara4119"></flowPara></flowRoot>    <flowRoot
+         id="flowPara4119" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4217"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -184,7 +184,7 @@
            height="204"
            x="22"
            y="16.227631" /></flowRegion><flowPara
-         id="flowPara4223"></flowPara></flowRoot>    <path
+         id="flowPara4223" /></flowRoot>    <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 132.37092,74.674987 41.76637,-0.37798 -4.91369,-3.59077"
        id="path753-4"
@@ -295,7 +295,7 @@
          x="100.53329"
          y="42.291985"
          style="fill:#0000ff;stroke-width:0.22117621"
-         id="tspan1131-7">-2</tspan></text>
+         id="tspan1131-7">+2</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 98.590235,58.293508 110.62878,74.697672"
@@ -343,7 +343,7 @@
          id="tspan114-5-4-2-5-5-1-7"
          x="121.07782"
          y="72.4534"
-         style="fill:#0000ff;stroke-width:0.22117621">+1</tspan></text>
+         style="fill:#0000ff;stroke-width:0.22117621">-1</tspan></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot4491"
@@ -355,7 +355,7 @@
            height="135.7645"
            x="789.13116"
            y="111.67622" /></flowRegion><flowPara
-         id="flowPara4497"></flowPara></flowRoot>    <flowRoot
+         id="flowPara4497" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot4535"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -366,7 +366,7 @@
            height="106.06602"
            x="-89.095451"
            y="146.25069" /></flowRegion><flowPara
-         id="flowPara4541"></flowPara></flowRoot>    <ellipse
+         id="flowPara4541" /></flowRoot>    <ellipse
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.15658128;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        id="path815-6-0-8-11-0"
        cx="94.399834"
@@ -425,7 +425,7 @@
            height="146.37111"
            x="266.57925"
            y="183.72736" /></flowRegion><flowPara
-         id="flowPara5426"></flowPara></flowRoot>    <flowRoot
+         id="flowPara5426" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot5428"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -436,7 +436,7 @@
            height="261.62952"
            x="625.0824"
            y="21.7999" /></flowRegion><flowPara
-         id="flowPara5434"></flowPara></flowRoot>    <ellipse
+         id="flowPara5434" /></flowRoot>    <ellipse
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.15658128;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        id="path815-2-2-9"
        cx="189.11354"
@@ -514,7 +514,7 @@
          id="tspan114-5-4-2-5-5-1-4"
          x="216.13663"
          y="72.663574"
-         style="fill:#0000ff;stroke-width:0.22117621">-1</tspan></text>
+         style="fill:#0000ff;stroke-width:0.22117621">+1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.48783588px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.22117621"
@@ -526,7 +526,7 @@
          x="199.96642"
          y="44.679218"
          style="fill:#0000ff;stroke-width:0.22117621"
-         id="tspan1131-76">-2</tspan></text>
+         id="tspan1131-76">+2</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 213.87173,86.767316 12.03854,16.404174"
@@ -586,7 +586,7 @@
            height="95.459419"
            x="458.91229"
            y="74.832909" /></flowRegion><flowPara
-         id="flowPara5547"></flowPara></flowRoot>    <path
+         id="flowPara5547" /></flowRoot>    <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 226.72001,74.131538 41.76637,-0.37798 -4.91368,-3.59077"
        id="path753-4-5"
@@ -637,7 +637,7 @@
          id="tspan86-9-49-8"
          x="298.76675"
          y="63.870766"
-         style="fill:#ff0000;stroke-width:0.22117621">5</tspan></text>
+         style="fill:#ff0000;stroke-width:0.22117621">6</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.48783588px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.22117621"
@@ -728,7 +728,7 @@
          id="tspan90-4-8-2-3-0"
          x="277.82968"
          y="91.883095"
-         style="fill:#ff0000;stroke-width:0.22117621">6</tspan></text>
+         style="fill:#ff0000;stroke-width:0.22117621">5</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.48783588px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.22117621"
