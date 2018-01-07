@@ -20,7 +20,7 @@ char *createMessage(char *message, ...){
   return buffer;
 }
 
-void testAssertEqualNode(Node *left, Node *right, int bf, Node *node,int lineNo){
+void testAssertEqualNode(Node *left, Node *right, int bf, Node *node,int relVal,int cumVal,int lineNo){
   char *error;
   if(left != node->left){
       error = createMessage("Expected left node to be 0x%p, but was %p",  \
@@ -33,10 +33,26 @@ void testAssertEqualNode(Node *left, Node *right, int bf, Node *node,int lineNo)
     UNITY_TEST_FAIL(lineNo,error);
   }
   else if(right != node->right){
-      error = createMessage("Expected right node to be 0x%p, but was %p",  \
+    error = createMessage("Expected right node to be 0x%p, but was %p",  \
                             right,node->right);
     UNITY_TEST_FAIL(lineNo,error);
-    }
+  }
+  else if(node->relativeVal != relVal){
+    error = createMessage("Expected relative value to be 0x%p, but was %p",  \
+                            relVal,node->relativeVal);
+    UNITY_TEST_FAIL(lineNo,error);
+  }
+  else if(node->cummulativeVal != cumVal){
+    error = createMessage("Expected cummulative value to be 0x%p, but was %p",  \
+                            cumVal,node->cummulativeVal);
+    UNITY_TEST_FAIL(lineNo,error);
+  }
+  else if(node==NULL){
+    error = createMessage("Node is undefined!");
+    UNITY_TEST_FAIL(lineNo,error);
+  }
+
+
 
 
 }
