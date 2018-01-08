@@ -1,7 +1,4 @@
 #include "avlRelativeAdd.h"
-#include "Node.h"
-
-
 
 int avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummulativeValue){
   int heightChanged;
@@ -41,23 +38,11 @@ int avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummu
       return 1;
   }
   else if(cummulativeRightTemp > nodeToAdd->cummulativeVal){
-    // if((*rootPtr)->left == NULL){
-    //   (*rootPtr)->relativeVal -= cummulativeValue;
-    // }
     heightChanged = avlRelativeAdd(&(*rootPtr)->left,nodeToAdd,previousValue,nodeToAdd->cummulativeVal- previousValue);
       if((*rootPtr)->left != NULL){
         if((*rootPtr)->left->cummulativeVal == temp || (*rootPtr)->left->cummulativeVal + previousValue == temp)
         (*rootPtr)->relativeVal -= cummulativeValue;
       }
-      // if(cummulativeRightTemp > nodeToAdd->cummulativeVal && (*rootPtr)->left->left == NULL && (*rootPtr)->left->right == NULL)
-
-      // if((*rootPtr)->left->right!=NULL){
-      //   if((*rootPtr)->left->right->left == NULL && (*rootPtr)->left->right->right == NULL \
-      //     && (*rootPtr)->left->right->relativeVal + (*rootPtr)->left->cummulativeVal == temp){
-      //           (*rootPtr)->relativeVal -= (*rootPtr)->left->right->relativeVal;
-      //   }
-      // }
-
       if((*rootPtr)->left->right !=NULL){
         int absVal = findNode(&(*rootPtr)->left,nodeToAdd,temp,previousValue);
         (*rootPtr)->relativeVal -= absVal;
