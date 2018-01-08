@@ -127,3 +127,51 @@ void test_avlRelativeRemove_given_5_3_2_10_remove_3(void){
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node2,2,2);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node10,5,5);
 }
+
+//scenario 7
+void test_avlRelativeRemove_given_5_3_remove_5(void){
+  Node *root = &node5;
+  initNode(&node5,&node3,NULL,-1,2,5);
+  initNode(&node3,NULL,NULL,0,3,3);
+
+  avlRelativeRemove(&root,5,0);
+
+  TEST_ASSERT_EQUAL_PTR(&node3,root);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,3,3);
+}
+
+//scenario 8
+void test_avlRelativeRemove_given_5_3_7_4_remove_4(void){
+  Node *root = &node5;
+  initNode(&node5,&node3,&node7,-1,1,5);
+  initNode(&node3,NULL,&node4,1,3,3);
+  initNode(&node4,NULL,NULL,0,1,1);
+  initNode(&node7,NULL,NULL,0,2,2);
+
+  avlRelativeRemove(&root,4,0);
+
+  TEST_ASSERT_EQUAL_PTR(&node5,root);
+  TEST_ASSERT_EQUAL_NODE(&node3,&node7,0,&node5,2,5);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,3,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node7,2,2);
+}
+
+//scenario 9
+void test_avlRelativeRemove_given_9_3_1_7_11_12_remove_1(void){
+  Node *root = &node9;
+  initNode(&node9,&node3,&node11,0,2,9);
+  initNode(&node3,&node1,&node7,0,2,3);
+  initNode(&node11,NULL,&node12,1,2,2);
+  initNode(&node1,NULL,NULL,0,1,1);
+  initNode(&node7,NULL,NULL,0,4,4);
+  initNode(&node12,NULL,NULL,0,1,1);
+
+  avlRelativeRemove(&root,1,0);
+
+  TEST_ASSERT_EQUAL_PTR(&node9,root);
+  TEST_ASSERT_EQUAL_NODE(&node3,&node11,0,&node9,2,9);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node12,1,&node11,2,2);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node7,-1,&node3,3,3);
+  TEST_ASSERT_EQUAL_NODE(&node1,NULL,-1,&node7,4,4);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node12,1,1);
+}
