@@ -27,10 +27,6 @@ void test_avlAdd_given_5_add_8(void){
   avlRelativeAdd(&root,&node8,0,node8.cummulativeVal);
 
   TEST_ASSERT_EQUAL_PTR(&node5,root);
-  TEST_ASSERT_EQUAL_PTR(node8.cummulativeVal,3);
-  TEST_ASSERT_EQUAL_PTR(node8.relativeVal,3);
-  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
-  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,5);
   TEST_ASSERT_EQUAL_NODE(NULL,&node8,1,&node5,5,5);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node8,3,3);
 }
@@ -44,10 +40,6 @@ void test_avlAdd_given_5_add_3(void){
   avlRelativeAdd(&root,&node3,0,node3.cummulativeVal);
 
   TEST_ASSERT_EQUAL_PTR(&node5,root);
-  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
-  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,3);
-  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
-  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,2);
   TEST_ASSERT_EQUAL_NODE(&node3,NULL,-1,&node5,2,5);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,3,3);
 }
@@ -63,14 +55,6 @@ void test_avlAdd_given_5_3_7_add_1(void){
   avlRelativeAdd(&root,&node1,0,node1.cummulativeVal);
 
   TEST_ASSERT_EQUAL_PTR(&node5,root);
-  TEST_ASSERT_EQUAL_PTR(node1.cummulativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node1.relativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
-  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node7.cummulativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node7.relativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
-  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,2);
   TEST_ASSERT_EQUAL_NODE(&node3,&node7,-1,&node5,2,5);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node7,2,2);
   TEST_ASSERT_EQUAL_NODE(&node1,NULL,-1,&node3,2,3);
@@ -88,14 +72,6 @@ void test_avlAdd_given_5_3_7_add_4(void){
   avlRelativeAdd(&root,&node4,0,node4.cummulativeVal);
 
   TEST_ASSERT_EQUAL_PTR(&node5,root);
-  TEST_ASSERT_EQUAL_PTR(node4.cummulativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node4.relativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
-  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node7.cummulativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node7.relativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
-  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,3);
   TEST_ASSERT_EQUAL_NODE(&node3,&node7,-1,&node5,1,5);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node7,2,2);
   TEST_ASSERT_EQUAL_NODE(NULL,&node4,1,&node3,3,3);
@@ -113,14 +89,6 @@ void test_avlAdd_given_5_3_7_add_6(void){
   avlRelativeAdd(&root,&node6,0,node6.cummulativeVal);
 
   TEST_ASSERT_EQUAL_PTR(&node5,root);
-  TEST_ASSERT_EQUAL_PTR(node6.cummulativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node6.relativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
-  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node7.cummulativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node7.relativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
-  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,3);
   TEST_ASSERT_EQUAL_NODE(&node3,&node7,1,&node5,2,5);
   TEST_ASSERT_EQUAL_NODE(&node6,NULL,-1,&node7,1,2);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,3,3);
@@ -138,14 +106,6 @@ void test_avlAdd_given_5_3_7_add_8(void){
   avlRelativeAdd(&root,&node8,0,node8.cummulativeVal);
 
   TEST_ASSERT_EQUAL_PTR(&node5,root);
-  TEST_ASSERT_EQUAL_PTR(node8.cummulativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node8.relativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
-  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node7.cummulativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node7.relativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
-  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,3);
   TEST_ASSERT_EQUAL_NODE(&node3,&node7,1,&node5,2,5);
   TEST_ASSERT_EQUAL_NODE(NULL,&node8,1,&node7,2,2);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,3,3);
@@ -162,12 +122,6 @@ void test_avlAdd_given_5_3_add_2_expect_rotate_right(void){
   avlRelativeAdd(&root,&node2,0,node2.cummulativeVal);
 
   TEST_ASSERT_EQUAL_PTR(&node3,root);
-  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
-  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,2);
   TEST_ASSERT_EQUAL_NODE(&node2,&node5,0,&node3,1,3);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node2,2,2);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node5,2,2);
@@ -183,12 +137,6 @@ void test_avlAdd_given_5_7_add_10_expect_rotate_left(void){
   avlRelativeAdd(&root,&node10,0,node10.cummulativeVal);
 
   TEST_ASSERT_EQUAL_PTR(&node7,root);
-  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
-  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,5);
-  TEST_ASSERT_EQUAL_PTR(node7.cummulativeVal,7);
-  TEST_ASSERT_EQUAL_PTR(node7.relativeVal,2);
-  TEST_ASSERT_EQUAL_PTR(node10.cummulativeVal,3);
-  TEST_ASSERT_EQUAL_PTR(node10.relativeVal,3);
   TEST_ASSERT_EQUAL_NODE(&node5,&node10,0,&node7,2,7);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node5,5,5);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node10,3,3);
@@ -204,12 +152,6 @@ void test_avlAdd_given_5_3_add_4_expect_rotate_left_right(void){
   avlRelativeAdd(&root,&node4,0,node4.cummulativeVal);
 
   TEST_ASSERT_EQUAL_PTR(&node4,root);
-  TEST_ASSERT_EQUAL_PTR(node4.cummulativeVal,4);
-  TEST_ASSERT_EQUAL_PTR(node4.relativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node3.cummulativeVal,3);
-  TEST_ASSERT_EQUAL_PTR(node3.relativeVal,3);
-  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,1);
   TEST_ASSERT_EQUAL_NODE(&node3,&node5,0,&node4,1,4);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,3,3);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node5,1,1);
@@ -225,12 +167,6 @@ void test_avlAdd_given_5_7_add_6_expect_rotate_right_left(void){
   avlRelativeAdd(&root,&node6,0,node6.cummulativeVal);
 
   TEST_ASSERT_EQUAL_PTR(&node6,root);
-  TEST_ASSERT_EQUAL_PTR(node5.cummulativeVal,5);
-  TEST_ASSERT_EQUAL_PTR(node5.relativeVal,5);
-  TEST_ASSERT_EQUAL_PTR(node7.cummulativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node7.relativeVal,1);
-  TEST_ASSERT_EQUAL_PTR(node6.cummulativeVal,6);
-  TEST_ASSERT_EQUAL_PTR(node6.relativeVal,1);
   TEST_ASSERT_EQUAL_NODE(&node5,&node7,0,&node6,1,6);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node5,5,5);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node7,1,1);
