@@ -59,7 +59,7 @@ int avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummu
       // }
 
       if((*rootPtr)->left->right !=NULL){
-        int absVal = findNode(&(*rootPtr)->left,nodeToAdd,temp);
+        int absVal = findNode(&(*rootPtr)->left,nodeToAdd,temp,previousValue);
         (*rootPtr)->relativeVal -= absVal;
       }
 
