@@ -26,15 +26,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="1086.3664"
+     inkscape:cx="1707.1016"
      inkscape:cy="188.41053"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -611,7 +611,7 @@
            height="435.57776"
            x="338.70413"
            y="-7.7044454" /></flowRegion><flowPara
-         id="flowPara644"></flowPara></flowRoot>    <ellipse
+         id="flowPara644" /></flowRoot>    <ellipse
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.15658128;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        id="path815-2-2-3-1"
        cx="9.2683325"
@@ -814,7 +814,7 @@
            height="101.82337"
            x="731.14838"
            y="369.18347" /></flowRegion><flowPara
-         id="flowPara784"></flowPara></flowRoot>    <path
+         id="flowPara784" /></flowRoot>    <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 253.22101,84.256052 12.03854,16.404168"
        id="path4311-5-7"
@@ -873,7 +873,7 @@
            height="141.42136"
            x="1028.8403"
            y="98.361572" /></flowRegion><flowPara
-         id="flowPara852"></flowPara></flowRoot>    <path
+         id="flowPara852" /></flowRoot>    <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 275.5781,55.553865 12.03854,16.404167"
        id="path4311-5-6-5"
@@ -932,7 +932,7 @@
            height="104.6518"
            x="1185.818"
            y="90.583397" /></flowRegion><flowPara
-         id="flowPara896"></flowPara></flowRoot>    <ellipse
+         id="flowPara896" /></flowRoot>    <ellipse
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.15658128;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        id="path815-6-0-8-0-93"
        cx="88.271439"
@@ -991,7 +991,7 @@
            height="158.39192"
            x="244.65894"
            y="171.90067" /></flowRegion><flowPara
-         id="flowPara940"></flowPara></flowRoot>    <ellipse
+         id="flowPara940" /></flowRoot>    <ellipse
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.15658128;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        id="path815-6-0-8-0-93-3"
        cx="-33.836563"
@@ -1050,7 +1050,7 @@
            height="132.93607"
            x="-57.982754"
            y="167.65804" /></flowRegion><flowPara
-         id="flowPara984"></flowPara></flowRoot>    <flowRoot
+         id="flowPara984" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot986"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -1061,7 +1061,7 @@
            height="148.61598"
            x="781.35297"
            y="179.55528" /></flowRegion><flowPara
-         id="flowPara992"></flowPara></flowRoot>    <ellipse
+         id="flowPara992" /></flowRoot>    <ellipse
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.15658128;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        id="path815-6-0-8-0-6"
        cx="205.95021"
@@ -1120,7 +1120,7 @@
            height="453.96255"
            x="724.78442"
            y="-3.4618049" /></flowRegion><flowPara
-         id="flowPara1036"></flowPara></flowRoot>    <ellipse
+         id="flowPara1036" /></flowRoot>    <ellipse
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:0.15658128;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
        id="path815-2-2-2-0"
        cx="413.63043"
@@ -1407,6 +1407,16 @@
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 431.85104,82.474062 418.62119,97.307515"
        id="path956-6-6-4-7"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#13eaea;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 117.46085,68.605677 c -13.10974,-9.8898 -24.149509,8.04984 -24.149509,8.04984 v -4.13992 4.59991 l 3.90992,-1.83996"
+       id="path10181"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#13eaea;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 248.42239,54.292371 c 8.46667,-33.3375 38.36458,-12.170833 38.36458,-12.170833 l -1.58749,-6.614583 1.85208,6.879166 -6.08542,2.116667 v 0"
+       id="path9354"
        inkscape:connector-curvature="0" />
   </g>
 </svg>

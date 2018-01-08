@@ -25,16 +25,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.288098"
-     inkscape:cx="1191.8625"
-     inkscape:cy="193.8492"
+     inkscape:zoom="0.91082283"
+     inkscape:cx="1143.8306"
+     inkscape:cy="137.46452"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1323,7 +1323,7 @@
            height="160.70206"
            x="673.08545"
            y="281.34796" /></flowRegion><flowPara
-         id="flowPara2516"></flowPara></flowRoot>    <flowRoot
+         id="flowPara2516" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot2518"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -1334,7 +1334,7 @@
            height="100.924"
            x="816.70807"
            y="123.75126" /></flowRegion><flowPara
-         id="flowPara2524"></flowPara></flowRoot>    <flowRoot
+         id="flowPara2524" /></flowRoot>    <flowRoot
        xml:space="preserve"
        id="flowRoot2526"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -1345,7 +1345,7 @@
            height="107.91105"
            x="816.70807"
            y="112.10618" /></flowRegion><flowPara
-         id="flowPara2532"></flowPara></flowRoot>    <path
+         id="flowPara2532" /></flowRoot>    <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 230.11167,112.92109 12.03854,16.40417"
        id="path4311-5-7"
@@ -1441,5 +1441,15 @@
          x="421.47125"
          y="95.655312"
          style="fill:#0000ff;stroke-width:0.22117621">0</tspan></text>
+    <path
+       style="fill:none;stroke:#13eaea;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 119.09004,66.158854 c -13.10974,-9.8898 -24.149523,8.04984 -24.149523,8.04984 v -4.13992 4.59991 l 3.90993,-1.83997"
+       id="path10181"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#13eaea;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 249.75106,54.011121 c 8.46667,-33.3375 38.36458,-12.170833 38.36458,-12.170833 l -1.58749,-6.614583 1.85208,6.879166 -6.08542,2.116667 v 0"
+       id="path9354"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>

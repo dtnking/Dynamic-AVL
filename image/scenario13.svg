@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.91082283"
-     inkscape:cx="556.76903"
+     inkscape:cx="1303.1759"
      inkscape:cy="147.18084"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -1248,18 +1248,18 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.48783588px;line-height:1.25;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.22117621"
-       x="264.14816"
-       y="38.78178"
+       x="268.86292"
+       y="45.940891"
        id="text104-0-3-2-16"
        transform="scale(0.98580384,1.0144006)"><tspan
          sodipodi:role="line"
          id="tspan102-9-6-1-0"
-         x="264.14816"
-         y="38.78178"
+         x="268.86292"
+         y="45.940891"
          style="fill:#0000ff;stroke-width:0.22117621">+2</tspan><tspan
          sodipodi:role="line"
-         x="264.14816"
-         y="46.891575"
+         x="268.86292"
+         y="54.050686"
          style="fill:#0000ff;stroke-width:0.22117621"
          id="tspan1131-1-8" /></text>
     <text
@@ -1481,5 +1481,15 @@
          x="328.33249"
          y="126.393"
          style="fill:#0000ff;stroke-width:0.22117621">0</tspan></text>
+    <path
+       style="fill:none;stroke:#13eaea;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 264.04367,37.981491 c -13.10973,-9.8898 -24.14951,8.04984 -24.14951,8.04984 v -4.13992 4.59991 l 3.90992,-1.83996"
+       id="path10181"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#13eaea;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 132.97478,81.897994 c 8.46667,-33.3375 38.36458,-12.170833 38.36458,-12.170833 l -1.58749,-6.614583 1.85208,6.879166 -6.08542,2.116667 v 0"
+       id="path9354"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>
