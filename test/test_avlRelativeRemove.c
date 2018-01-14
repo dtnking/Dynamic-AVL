@@ -171,7 +171,7 @@ void test_avlRelativeRemove_given_9_3_1_7_11_12_remove_1(void){
   TEST_ASSERT_EQUAL_PTR(&node9,root);
   TEST_ASSERT_EQUAL_NODE(&node3,&node11,0,&node9,2,9);
   TEST_ASSERT_EQUAL_NODE(NULL,&node12,1,&node11,2,2);
-  TEST_ASSERT_EQUAL_NODE(NULL,&node7,-1,&node3,3,3);
-  TEST_ASSERT_EQUAL_NODE(&node1,NULL,-1,&node7,4,4);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node7,1,&node3,3,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node7,4,4);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node12,1,1);
 }
