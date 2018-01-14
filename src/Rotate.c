@@ -31,8 +31,12 @@ Node *rotateRightLeft(Node *node){
 int avlBalanceLeftTree(Node **rootPtr){
   Node *node = *rootPtr;
 
-  if((*rootPtr)->balanceFactor  <= 1)
-    return 1;
+  if((*rootPtr)->balanceFactor  <= 1){
+    if((*rootPtr)->right == NULL)
+      return 1;
+    else
+      return 0;
+  }
 
   if(node->right->balanceFactor == 1 ){
     node->balanceFactor = 0;
@@ -69,6 +73,7 @@ int avlBalanceLeftTree(Node **rootPtr){
       return 1;
       }
     }
+      return 0;
 }
 
 int avlBalanceRightTree(Node **rootPtr){
@@ -76,8 +81,12 @@ int avlBalanceRightTree(Node **rootPtr){
 
 
 
-  if((*rootPtr)->balanceFactor >= -1)
-    return 1;
+  if((*rootPtr)->balanceFactor >= -1){
+    if((*rootPtr)->left == NULL)
+      return 1;
+    else
+      return 0;
+  }
 
 
   if(node->left->balanceFactor == -1 ){
