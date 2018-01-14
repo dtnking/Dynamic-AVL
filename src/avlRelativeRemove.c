@@ -56,7 +56,10 @@ Node *_avlRemove(Node **rootPtr,int absoluteDeleteValue,int previousValue,int *h
           (*rootPtr)->left = temp->left;
           (*rootPtr)->right = temp->right;
         }
-        *heightFlag = avlBalanceRightTree(rootPtr);
+        if((*rootPtr)->balanceFactor == -2)
+          *heightFlag = avlBalanceRightTree(rootPtr);
+        else
+          *heightFlag=1;
 
         if((*rootPtr)->balanceFactor != 0){
           *heightFlag = 0;
@@ -68,7 +71,8 @@ Node *_avlRemove(Node **rootPtr,int absoluteDeleteValue,int previousValue,int *h
       if(cummulativeRightTemp > absoluteDeleteValue){
         temp = _avlRemove(&(*(rootPtr))->left,absoluteDeleteValue,previousValue,heightFlag);
         if((*rootPtr)->left != NULL ){
-          if((*rootPtr)->left->left == NULL)
+
+          if((*rootPtr)->left->left == NULL && (*rootPtr)->left->right == NULL  )
             (*rootPtr)->relativeVal += temp->relativeVal;
         }
         else
