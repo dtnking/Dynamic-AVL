@@ -32,7 +32,7 @@ int avlBalanceLeftTree(Node **rootPtr){
   Node *node = *rootPtr;
 
   if((*rootPtr)->balanceFactor  <= 1){
-    if((*rootPtr)->right == NULL)
+    if((*rootPtr)->balanceFactor == 0)
       return 1;
     else
       return 0;
@@ -79,10 +79,8 @@ int avlBalanceLeftTree(Node **rootPtr){
 int avlBalanceRightTree(Node **rootPtr){
   Node *node = *rootPtr;
 
-
-
   if((*rootPtr)->balanceFactor >= -1){
-    if((*rootPtr)->left == NULL)
+    if((*rootPtr)->balanceFactor == 0)
       return 1;
     else
       return 0;
