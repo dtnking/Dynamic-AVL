@@ -2,8 +2,8 @@
 
 int avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummulativeValue){
   int heightChanged;
-  int cummulativeRightTemp;
-  int temp = nodeToAdd->cummulativeVal;
+  int absoluteValue;
+  int addCummulativeVal = nodeToAdd->cummulativeVal;
   if(*rootPtr == NULL){
     (*rootPtr) = nodeToAdd;
     nodeToAdd->cummulativeVal = cummulativeValue;
@@ -12,15 +12,15 @@ int avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummu
 
     return 1;
   }else{
-    cummulativeRightTemp = previousValue + (*rootPtr)->cummulativeVal;
-    if (cummulativeRightTemp < nodeToAdd->cummulativeVal){
+    absoluteValue = previousValue + (*rootPtr)->cummulativeVal;
+    if (absoluteValue < nodeToAdd->cummulativeVal){
       // if((*rootPtr)->right != NULL){
       //   previousValue += (*rootPtr)->right->cummulativeVal;
       // }
       // else{
       //   previousValue = nodeToAdd->cummulativeVal - previousValue;
       // }
-      heightChanged = avlRelativeAdd(&(*rootPtr)->right,nodeToAdd,cummulativeRightTemp,nodeToAdd->cummulativeVal-cummulativeRightTemp);
+      heightChanged = avlRelativeAdd(&(*rootPtr)->right,nodeToAdd,absoluteValue,nodeToAdd->cummulativeVal-absoluteValue);
       if(heightChanged==1){
           (*rootPtr)->balanceFactor += 1 ;
           if((*rootPtr)->balanceFactor==0)
@@ -37,15 +37,15 @@ int avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummu
     else
       return 1;
   }
-  else if(cummulativeRightTemp > nodeToAdd->cummulativeVal){
+  else if(absoluteValue > nodeToAdd->cummulativeVal){
     heightChanged = avlRelativeAdd(&(*rootPtr)->left,nodeToAdd,previousValue,nodeToAdd->cummulativeVal- previousValue);
       if((*rootPtr)->left != NULL){
-        if((*rootPtr)->left->cummulativeVal == temp || (*rootPtr)->left->cummulativeVal + previousValue == temp)
+        if((*rootPtr)->left->cummulativeVal == addCummulativeVal || (*rootPtr)->left->cummulativeVal + previousValue == addCummulativeVal)
         (*rootPtr)->relativeVal -= cummulativeValue;
       }
       if((*rootPtr)->left->right !=NULL){
-        int absVal = findNode(&(*rootPtr)->left,nodeToAdd,temp,previousValue);
-        (*rootPtr)->relativeVal -= absVal;
+        int addRelativeVal = findAddRelativeVal(&(*rootPtr)->left,nodeToAdd,addCummulativeVal,previousValue);
+        (*rootPtr)->relativeVal -= addRelativeVal;
       }
 
       if(heightChanged==1){
