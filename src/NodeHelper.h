@@ -3,7 +3,7 @@
 
 void initNode(Node *node, Node *left, Node *right, int bf,uint32_t rv, uint32_t cv);
 Node *createNode(Node *newNode,uint32_t val);
-int findAddRelativeVal(Node **node,Node *nodeToAdd,int absoluteAddVal,int previousValue);
+int findAddRelativeVal(Node **node,Node *nodeToAdd,int absoluteAddVal,int previousValue,int storeV);
 double printRelValFromSmallest(Node **rootPtr);
 
 #endif // _AVL_H

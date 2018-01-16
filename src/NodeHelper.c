@@ -17,17 +17,17 @@ Node *createNode(Node *newNode,uint32_t val){
   return newNode;
 }
 
-int findAddRelativeVal(Node **node,Node *nodeToAdd,int absoluteAddVal,int previousValue){
+int findAddRelativeVal(Node **node,Node *nodeToAdd,int absoluteAddVal,int previousValue,int storeV){
   if((*node)->right!=NULL){
-    if((*node)->right->relativeVal + previousValue + (*node)->cummulativeVal != absoluteAddVal){
-      findAddRelativeVal(&(*node)->right,nodeToAdd,absoluteAddVal,previousValue+(*node)->right->cummulativeVal);
-    }
-    else{
-      return ((*node)->right->relativeVal);
-    }
+    storeV=findAddRelativeVal(&(*node)->right,nodeToAdd,absoluteAddVal,previousValue+(*node)->right->relativeVal,storeV);
+
   }
-  return (*node)->relativeVal;
+  if(previousValue == absoluteAddVal)
+    return (*node)->relativeVal;
+  return storeV;
 }
+
+
 
 
 double printRelValFromSmallest(Node **rootPtr){

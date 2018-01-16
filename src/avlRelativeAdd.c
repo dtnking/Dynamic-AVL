@@ -37,11 +37,14 @@ int avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummu
     if((*rootPtr)->left != NULL){
       if((*rootPtr)->left->cummulativeVal == addCummulativeVal || (*rootPtr)->left->cummulativeVal + previousValue == addCummulativeVal)
       (*rootPtr)->relativeVal -= cummulativeValue;
+      else{
+        if((*rootPtr)->left->right !=NULL){
+          int addRelativeVal = findAddRelativeVal(&(*rootPtr)->left,nodeToAdd,addCummulativeVal,previousValue+(*rootPtr)->left->cummulativeVal,0);
+          (*rootPtr)->relativeVal -= addRelativeVal;
+        }
+      }
     }
-    if((*rootPtr)->left->right !=NULL){
-      int addRelativeVal = findAddRelativeVal(&(*rootPtr)->left,nodeToAdd,addCummulativeVal,previousValue);
-      (*rootPtr)->relativeVal -= addRelativeVal;
-    }
+
 
     if(heightChanged==1){
       (*rootPtr)->balanceFactor -= 1;
