@@ -287,7 +287,7 @@ void test_avlAdd_given_6_3_8_9_10_add_9_expect_rotate_right_left(void){
 //scenario 16
 void test_avlAdd_given_6_3_2_5_7_add_1_expect_rotate_right(void){
   Node *root = &node6;
-  initNode(&node6,&node3,&node7,-1,2,6);
+  initNode(&node6,&node3,&node7,-1,1,6);
   initNode(&node7,NULL,NULL,0,1,1);
   initNode(&node3,&node2,&node5,0,1,3);
   initNode(&node2,NULL,NULL,0,2,2);
@@ -308,7 +308,7 @@ void test_avlAdd_given_6_3_2_5_7_add_1_expect_rotate_right(void){
 //scenario 17
 void test_avlAdd_given_6_3_1_5_7_add_2_expect_rotate_right(void){
   Node *root = &node6;
-  initNode(&node6,&node3,&node7,-1,2,6);
+  initNode(&node6,&node3,&node7,-1,1,6);
   initNode(&node7,NULL,NULL,0,1,1);
   initNode(&node3,&node1,&node5,0,2,3);
   initNode(&node1,NULL,NULL,0,1,1);
