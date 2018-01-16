@@ -39,8 +39,5 @@ void test_manual_given_(void){
   avlRelativeAdd(&root,&node40,0,node40.cummulativeVal);
   avlRelativeAdd(&root,&node3,0,node3.cummulativeVal);
 
-
-
   printRelValFromSmallest(&root);
-
 }

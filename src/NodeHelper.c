@@ -27,14 +27,10 @@ int findAddRelativeVal(Node **node,Node *nodeToAdd,int absoluteAddVal,int previo
   return storeV;
 }
 
-
-
-
 double printRelValFromSmallest(Node **rootPtr){
   if((*rootPtr)->left != NULL){
     printRelValFromSmallest(&(*rootPtr)->left);
   }
-
   if((*rootPtr)->right != NULL){
     printf("%d ,",(*rootPtr)->relativeVal);
     return printRelValFromSmallest(&(*rootPtr)->right);
