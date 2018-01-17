@@ -45,7 +45,7 @@ int _avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cumm
       (*rootPtr)->relativeVal -= cummulativeValue;
       else{
         if((*rootPtr)->left->right !=NULL){
-          int addRelativeVal = findAddRelativeVal(&(*rootPtr)->left,nodeToAdd,addCummulativeVal,previousValue+(*rootPtr)->left->cummulativeVal,0);
+          int addRelativeVal = findAddRelativeVal(&(*rootPtr)->left,addCummulativeVal,previousValue+(*rootPtr)->left->cummulativeVal);
           (*rootPtr)->relativeVal -= addRelativeVal;
         }
       }
@@ -72,25 +72,3 @@ int _avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cumm
   //   Throw(createException("Node to add is already exist", NODE_ADD_EXIST));
 }
 }
-
-
-
-
-//
-// int myfunc(int count, ...)
-// {
-//    va_list list;
-//    Node *root = NULL;
-//    int j = 0;
-//
-//    va_start(list, count);
-//    for(j=0; j<count; j++)
-//    {
-//      avlRelativeAdd(&root,&list,0,list->cummulativeVal);
-//      printf("%d", va_arg(list.relativeVal, int));
-//    }
-//
-//    va_end(list);
-//
-//    return count;
-// }

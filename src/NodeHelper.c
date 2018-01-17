@@ -17,9 +17,10 @@ Node *createNode(Node *newNode,uint32_t val){
   return newNode;
 }
 
-int findAddRelativeVal(Node **node,Node *nodeToAdd,int absoluteAddVal,int previousValue,int storeV){
+int findAddRelativeVal(Node **node,int absoluteAddVal,int previousValue){
+  int storeV=0;
   if((*node)->right!=NULL){
-    storeV=findAddRelativeVal(&(*node)->right,nodeToAdd,absoluteAddVal,previousValue+(*node)->right->relativeVal,storeV);
+    storeV=findAddRelativeVal(&(*node)->right,absoluteAddVal,previousValue+(*node)->right->relativeVal);
 
   }
   if(previousValue == absoluteAddVal)
