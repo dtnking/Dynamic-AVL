@@ -1,6 +1,12 @@
 #include "avlRelativeAdd.h"
 
-int avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummulativeValue){
+void avlRelativeAdd(Node **root, Node *nodeToAdd){
+  int previousValue = 0;
+  int cummulativeValue = nodeToAdd->cummulativeVal;
+  _avlRelativeAdd(root,nodeToAdd,previousValue,cummulativeValue);
+}
+
+int _avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummulativeValue){
   int heightChanged;
   int absoluteValue;
   int addCummulativeVal = nodeToAdd->cummulativeVal;
@@ -14,7 +20,7 @@ int avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummu
   }else{
     absoluteValue = previousValue + (*rootPtr)->cummulativeVal;
     if (absoluteValue < nodeToAdd->cummulativeVal){
-      heightChanged = avlRelativeAdd(&(*rootPtr)->right,nodeToAdd,absoluteValue,nodeToAdd->cummulativeVal-absoluteValue);
+      heightChanged = _avlRelativeAdd(&(*rootPtr)->right,nodeToAdd,absoluteValue,nodeToAdd->cummulativeVal-absoluteValue);
       if(heightChanged==1){
           (*rootPtr)->balanceFactor += 1 ;
           if((*rootPtr)->balanceFactor==0)
@@ -33,7 +39,7 @@ int avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummu
   }
 
   else if(absoluteValue > nodeToAdd->cummulativeVal){
-    heightChanged = avlRelativeAdd(&(*rootPtr)->left,nodeToAdd,previousValue,nodeToAdd->cummulativeVal- previousValue);
+    heightChanged = _avlRelativeAdd(&(*rootPtr)->left,nodeToAdd,previousValue,nodeToAdd->cummulativeVal- previousValue);
     if((*rootPtr)->left != NULL){
       if((*rootPtr)->left->cummulativeVal == addCummulativeVal || (*rootPtr)->left->cummulativeVal + previousValue == addCummulativeVal)
       (*rootPtr)->relativeVal -= cummulativeValue;

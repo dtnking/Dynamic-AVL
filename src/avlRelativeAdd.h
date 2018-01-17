@@ -4,6 +4,6 @@
 #include "NodeHelper.h"
 #include "Node.h"
 
-
-int avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummulativeValue);
+void avlRelativeAdd(Node **root, Node *nodeToAdd);
+int _avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cummulativeValue);
 #endif // _AVLRELATIVEADD_H
