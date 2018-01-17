@@ -1,7 +1,8 @@
 #include "avlRelativeRemove.h"
 
-Node *avlRelativeRemove(Node **rootPtr,int delData,int previousValue){
+Node *avlRelativeRemove(Node **rootPtr,int delData){
   int heightChange;
+  int previousValue = 0;
   Node *dataRemove = _avlRemove(rootPtr,delData,previousValue,&heightChange);
     if(dataRemove == NULL)
       printf("Couldn't find the node");
