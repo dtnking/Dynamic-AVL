@@ -9,8 +9,8 @@ struct Node{
   Node *right;
   int balanceFactor;
   int height;
-  uint32_t relativeVal;
-  uint32_t cummulativeVal;
+  int relativeVal;
+  int cummulativeVal;
 };
 
 
