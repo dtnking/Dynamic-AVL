@@ -1,5 +1,6 @@
 #include "avlRelativeAdd.h"
 
+
 void avlRelativeAdd(Node **root, Node *nodeToAdd){
   int previousValue = 0;
   int cummulativeValue = nodeToAdd->cummulativeVal;
@@ -15,7 +16,6 @@ int _avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cumm
     nodeToAdd->cummulativeVal = cummulativeValue;
     nodeToAdd->relativeVal = cummulativeValue;
     nodeToAdd->balanceFactor = 0;
-
     return 1;
   }else{
     absoluteValue = previousValue + (*rootPtr)->cummulativeVal;
@@ -68,7 +68,7 @@ int _avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cumm
     else
       return 1;
   }
-  // else
-  //   Throw(createException("Node to add is already exist", NODE_ADD_EXIST));
+  else
+    Throw(createException("Node to add is already exist", NODE_ADD_EXIST));
 }
 }
