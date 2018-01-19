@@ -21,6 +21,6 @@ void test_findSmallestNode(void){
   initNode(&node8,NULL,NULL,0,2,2);
   initNode(&node10,NULL,NULL,0,1,1);
 
-  result = findSmallestNode(&root);
+  result = findSmallestRelativeVal(&root);
   TEST_ASSERT_EQUAL_PTR(3,result);
 }
