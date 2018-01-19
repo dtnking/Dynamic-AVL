@@ -10,5 +10,7 @@ Node *_avlRemove(Node **rootPtr,int nodeToDelete,int previousValue,int *heightFl
 
 Node *avlRelativeRemoveSmallestRelative(Node **rootPtr,int delData);
 Node *_avlRemoveSmallestRelative(Node **rootPtr,int absoluteDeleteValue,int previousValue,int *heightFlag);
-Node *findNearest(Node **rootPtr,int *heightFlag);
+
+Node *removeSmallestRelativeVal(Node **rootPtr);
+
 #endif // _AVLRELATIVEREMOVE_H

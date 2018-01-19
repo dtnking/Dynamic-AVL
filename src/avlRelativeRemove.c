@@ -50,7 +50,7 @@ Node *_avlRemoveSmallestRelative(Node **rootPtr,int absoluteDeleteValue,int prev
       }
       else{
         temp = *rootPtr;
-        *rootPtr = findNearest(&(*rootPtr)->right,heightFlag);
+        *rootPtr = findNearestReplacer(&(*rootPtr)->right,heightFlag);
 
         if(*heightFlag == 1){
           temp->balanceFactor -= 1;
@@ -134,7 +134,7 @@ Node *_avlRemove(Node **rootPtr,int absoluteDeleteValue,int previousValue,int *h
       }
       else{
         temp = *rootPtr;
-        *rootPtr = findNearest(&(*rootPtr)->right,heightFlag);
+        *rootPtr = findNearestReplacer(&(*rootPtr)->right,heightFlag);
         if(*rootPtr != NULL){
           (*rootPtr)->relativeVal += temp->relativeVal;
           (*rootPtr)->cummulativeVal += temp->cummulativeVal;
@@ -202,33 +202,4 @@ Node *removeSmallestRelativeVal(Node **rootPtr){
   smallestRelativeVal = findSmallestRelativeVal(&(*rootPtr));
 
   avlRelativeRemoveSmallestRelative(&(*rootPtr),smallestRelativeVal);
-}
-
-Node *findNearest(Node **rootPtr,int *heightFlag){
-  Node *temp;
-  if((*rootPtr) == NULL){
-        *heightFlag = 1;
-         return NULL;
-    }
-  if((*rootPtr)->left!=NULL){
-    temp = findNearest(&(*rootPtr)->left,heightFlag);
-    if(*heightFlag == 1){
-      (*rootPtr)->cummulativeVal = (*rootPtr)->relativeVal;
-      (*rootPtr)->balanceFactor += 1;
-      *heightFlag = avlBalanceLeftTree(rootPtr);
-      if((*rootPtr)->balanceFactor != 0)
-        *heightFlag = 0;
-    }
-    if(temp->right != NULL){
-      (*rootPtr)->left = temp->right;
-      temp->right = NULL;
-    }
-    return temp;
-  }
-  else{
-    temp = (*rootPtr);
-    (*rootPtr) = NULL;
-    *heightFlag = 1;
-    return temp;
-  }
 }

@@ -40,8 +40,38 @@ int printRelValFromSmallest(Node **rootPtr){
 
 int findSmallestRelativeVal(Node **rootPtr){
   if((*rootPtr)->left != NULL){
-    findSmallestNode(&(*rootPtr)->left);
+    findSmallestRelativeVal(&(*rootPtr)->left);
   }
   else
     return (*rootPtr)->cummulativeVal;
+}
+
+
+Node *findNearestReplacer(Node **rootPtr,int *heightFlag){
+  Node *temp;
+  if((*rootPtr) == NULL){
+        *heightFlag = 1;
+         return NULL;
+    }
+  if((*rootPtr)->left!=NULL){
+    temp = findNearestReplacer(&(*rootPtr)->left,heightFlag);
+    if(*heightFlag == 1){
+      (*rootPtr)->cummulativeVal = (*rootPtr)->relativeVal;
+      (*rootPtr)->balanceFactor += 1;
+      *heightFlag = avlBalanceLeftTree(rootPtr);
+      if((*rootPtr)->balanceFactor != 0)
+        *heightFlag = 0;
+    }
+    if(temp->right != NULL){
+      (*rootPtr)->left = temp->right;
+      temp->right = NULL;
+    }
+    return temp;
+  }
+  else{
+    temp = (*rootPtr);
+    (*rootPtr) = NULL;
+    *heightFlag = 1;
+    return temp;
+  }
 }
