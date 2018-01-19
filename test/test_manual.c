@@ -17,7 +17,7 @@ void setUp(void){}
 
 void tearDown(void){}
 
-void test_manual_given_(void){
+void test_manual_add_4_2_15_10_30_80_28_40_3(void){
   Node *root = NULL;
   createNode(&node4,4);
   createNode(&node2,2);
@@ -29,15 +29,15 @@ void test_manual_given_(void){
   createNode(&node40,40);
   createNode(&node3,3);
 
-  avlRelativeAdd(&root,&node4,0,node4.cummulativeVal);
-  avlRelativeAdd(&root,&node2,0,node2.cummulativeVal);
-  avlRelativeAdd(&root,&node15,0,node15.cummulativeVal);
-  avlRelativeAdd(&root,&node10,0,node10.cummulativeVal);
-  avlRelativeAdd(&root,&node30,0,node30.cummulativeVal);
-  avlRelativeAdd(&root,&node80,0,node80.cummulativeVal);
-  avlRelativeAdd(&root,&node28,0,node28.cummulativeVal);
-  avlRelativeAdd(&root,&node40,0,node40.cummulativeVal);
-  avlRelativeAdd(&root,&node3,0,node3.cummulativeVal);
+  avlRelativeAdd(&root,&node4);
+  avlRelativeAdd(&root,&node2);
+  avlRelativeAdd(&root,&node15);
+  avlRelativeAdd(&root,&node10);
+  avlRelativeAdd(&root,&node30);
+  avlRelativeAdd(&root,&node80);
+  avlRelativeAdd(&root,&node28);
+  avlRelativeAdd(&root,&node40);
+  avlRelativeAdd(&root,&node3);
 
   printRelValFromSmallest(&root);
 }
