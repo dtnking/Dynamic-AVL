@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include "Rotate.h"
 #include "Exception.h"
+#include "CException.h"
 #include "CExceptionConfig.h"
 #include "avlRelativeRemove.h"
 
@@ -267,7 +268,7 @@ void test_avlRelativeRemove_given_5_2_7_6_remove_2(void){
 }
 
 //scenario 15
-void test_avlRelativeRemove_given_9_4_1_7_2_11_12_remove_1(void){
+void test_avlRelativeRemove_given_9_4_1_7_3_11_12_remove_1(void){
   Node *root = &node9;
   initNode(&node9,&node4,&node11,-1,2,9);
   initNode(&node4,&node1,&node7,-1,1,4);
@@ -302,7 +303,35 @@ void test_removeSmallest_given_9_3_1_7_11_12_expected_remove_1(void){
   TEST_ASSERT_EQUAL_PTR(&node9,root);
   TEST_ASSERT_EQUAL_NODE(&node3,&node11,0,&node9,2,9);
   TEST_ASSERT_EQUAL_NODE(NULL,&node12,1,&node11,2,2);
-  TEST_ASSERT_EQUAL_NODE(NULL,&node7,1,&node3,3,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node7,1,&node3,2,3);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node7,4,4);
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node12,1,1);
+}
+
+// Remove not available Node ---->  Exception Thrown
+void test_avlRelativeRemove_given_9_4_1_7_3_11_12_remove_2_expected_error_code_2(void){
+  Node *root = &node9;
+  initNode(&node9,&node4,&node11,-1,2,9);
+  initNode(&node4,&node1,&node7,-1,1,4);
+  initNode(&node11,NULL,&node12,1,2,2);
+  initNode(&node1,NULL,&node3,1,1,1);
+  initNode(&node7,NULL,NULL,0,3,3);
+  initNode(&node12,NULL,NULL,0,1,1);
+  initNode(&node3,NULL,NULL,0,2,2);
+
+  Try{
+    avlRelativeRemove(&root,2);
+  }Catch(ex){
+    TEST_ASSERT_EQUAL(2,ex->errorCode);
+    dumpException(ex);
+  }
+  TEST_ASSERT_EQUAL_PTR(&node9,root);
+  TEST_ASSERT_EQUAL_NODE(&node4,&node11,-1,&node9,2,9);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node12,1,&node11,2,2);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,2,2);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node7,3,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node12,1,1);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node3,1,&node1,1,1);
+  TEST_ASSERT_EQUAL_NODE(&node1,&node7,-1,&node4,1,4);
+
 }
