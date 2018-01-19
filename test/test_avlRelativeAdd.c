@@ -18,6 +18,19 @@ void setUp(void){}
 
 void tearDown(void){}
 
+// Given 5 add another 5  ------> Exception Thrown
+void test_avlAdd_given_5_add_5_expected_exception_error_code_1(void){
+  Node *root = &node5;
+  initNode(&node5,NULL,NULL,0,5,5);
+  Try{
+  avlRelativeAdd(&root,&node5);
+  }Catch(ex){
+    TEST_ASSERT_EQUAL(1,ex->errorCode);
+  }
+  TEST_ASSERT_EQUAL_PTR(&node5,root);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node5,5,5);
+}
+
 //scenario 1
 void test_avlAdd_given_5_add_8(void){
   Node *root = &node5;
