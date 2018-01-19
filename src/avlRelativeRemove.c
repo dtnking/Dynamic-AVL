@@ -1,25 +1,25 @@
 #include "avlRelativeRemove.h"
 
-Node *avlRelativeRemoveSmallestRelative(Node **rootPtr,int delData){
+Node *avlRemoveWithoutAffectingRelativeVal(Node **rootPtr,int delData){
   int heightChange;
   int previousValue = 0;
-  Node *dataRemove = _avlRemoveSmallestRelative(rootPtr,delData,previousValue,&heightChange);
-    if(dataRemove == NULL)
-      printf("Couldn't find the node");
-    else
+  Node *dataRemove = _avlRemoveWithoutAffectingRelativeVal(rootPtr,delData,previousValue,&heightChange);
+  if(dataRemove == NULL)
+      Throw(createException("Couldn't find the node", NODE_NA));
+  else
       return dataRemove;
 }
 Node *avlRelativeRemove(Node **rootPtr,int delData){
   int heightChange;
   int previousValue = 0;
-  Node *dataRemove = _avlRemove(rootPtr,delData,previousValue,&heightChange);
-    if(dataRemove == NULL)
-      printf("Couldn't find the node");
-    else
+  Node *dataRemove = _avlRelativeRemove(rootPtr,delData,previousValue,&heightChange);
+  if(dataRemove == NULL)
+      Throw(createException("Couldn't find the node", NODE_NA));
+  else
       return dataRemove;
 }
 
-Node *_avlRemoveSmallestRelative(Node **rootPtr,int absoluteDeleteValue,int previousValue,int *heightFlag){
+Node *_avlRemoveWithoutAffectingRelativeVal(Node **rootPtr,int absoluteDeleteValue,int previousValue,int *heightFlag){
   Node *temp;
   int absoluteValue;
   if(*rootPtr == NULL)
@@ -76,7 +76,7 @@ Node *_avlRemoveSmallestRelative(Node **rootPtr,int absoluteDeleteValue,int prev
     }
     else{
       if(absoluteValue > absoluteDeleteValue){
-        temp = _avlRemoveSmallestRelative(&(*(rootPtr))->left,absoluteDeleteValue,previousValue,heightFlag);
+        temp = _avlRemoveWithoutAffectingRelativeVal(&(*(rootPtr))->left,absoluteDeleteValue,previousValue,heightFlag);
         if(*heightFlag == 1){
           (*rootPtr)->balanceFactor+=1;
           *heightFlag = avlBalanceLeftTree(rootPtr);
@@ -87,7 +87,7 @@ Node *_avlRemoveSmallestRelative(Node **rootPtr,int absoluteDeleteValue,int prev
         return temp;
       }
       else if(absoluteValue < absoluteDeleteValue){
-        temp = _avlRemoveSmallestRelative(&(*rootPtr)->right,absoluteDeleteValue,absoluteValue,heightFlag);
+        temp = _avlRemoveWithoutAffectingRelativeVal(&(*rootPtr)->right,absoluteDeleteValue,absoluteValue,heightFlag);
         if(*heightFlag == 1){
           (*rootPtr)->balanceFactor  -=1;
           *heightFlag = avlBalanceRightTree(rootPtr);
@@ -101,7 +101,7 @@ Node *_avlRemoveSmallestRelative(Node **rootPtr,int absoluteDeleteValue,int prev
   }
 }
 
-Node *_avlRemove(Node **rootPtr,int absoluteDeleteValue,int previousValue,int *heightFlag){
+Node *_avlRelativeRemove(Node **rootPtr,int absoluteDeleteValue,int previousValue,int *heightFlag){
   Node *temp;
   int absoluteValue;
   if(*rootPtr == NULL)
@@ -163,7 +163,9 @@ Node *_avlRemove(Node **rootPtr,int absoluteDeleteValue,int previousValue,int *h
     }
     else{
       if(absoluteValue > absoluteDeleteValue){
-        temp = _avlRemove(&(*(rootPtr))->left,absoluteDeleteValue,previousValue,heightFlag);
+        temp = _avlRelativeRemove(&(*(rootPtr))->left,absoluteDeleteValue,previousValue,heightFlag);
+        if(temp == NULL)
+          return NULL;
         if((*rootPtr)->left != NULL ){
           if((*rootPtr)->left->left == NULL && (*rootPtr)->left->right == NULL)
             if((*rootPtr)->left->cummulativeVal + (*rootPtr)->relativeVal != (*rootPtr)->cummulativeVal)
@@ -182,7 +184,10 @@ Node *_avlRemove(Node **rootPtr,int absoluteDeleteValue,int previousValue,int *h
         return temp;
       }
       else if(absoluteValue < absoluteDeleteValue){
-        temp = _avlRemove(&(*rootPtr)->right,absoluteDeleteValue,absoluteValue,heightFlag);
+        temp = _avlRelativeRemove(&(*rootPtr)->right,absoluteDeleteValue,absoluteValue,heightFlag);
+        if(temp == NULL){
+          return NULL;
+        }
         if(*heightFlag == 1){
           (*rootPtr)->balanceFactor  -=1;
           *heightFlag = avlBalanceRightTree(rootPtr);
@@ -201,5 +206,5 @@ Node *removeSmallestRelativeVal(Node **rootPtr){
   int smallestRelativeVal;
   smallestRelativeVal = findSmallestRelativeVal(&(*rootPtr));
 
-  avlRelativeRemoveSmallestRelative(&(*rootPtr),smallestRelativeVal);
+  avlRemoveWithoutAffectingRelativeVal(&(*rootPtr),smallestRelativeVal);
 }
