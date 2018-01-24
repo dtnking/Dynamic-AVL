@@ -27,6 +27,7 @@ void test_avlAdd_given_5_add_5_expected_exception_error_code_1(void){
   Try{
   avlRelativeAdd(&root,&node5);
   }Catch(ex){
+    dumpException(ex);
     TEST_ASSERT_EQUAL(1,ex->errorCode);
   }
   TEST_ASSERT_EQUAL_PTR(&node5,root);
