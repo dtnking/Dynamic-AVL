@@ -20,7 +20,7 @@ Node *createNode(Node *newNode,uint32_t val){
 int findAddRelativeVal(Node **node,int absoluteAddVal,int previousValue){
   int storeV=0;
   if((*node)->right!=NULL){
-    storeV=findAddRelativeVal(&(*node)->right,absoluteAddVal,previousValue+(*node)->right->relativeVal);
+    storeV=findAddRelativeVal(&(*node)->right,absoluteAddVal,previousValue+(*node)->right->cummulativeVal);
 
   }
   if(previousValue == absoluteAddVal)

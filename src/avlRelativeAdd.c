@@ -41,8 +41,12 @@ int _avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cumm
   else if(absoluteValue > nodeToAdd->cummulativeVal){
     heightChanged = _avlRelativeAdd(&(*rootPtr)->left,nodeToAdd,previousValue,nodeToAdd->cummulativeVal- previousValue);
     if((*rootPtr)->left != NULL){
-      if((*rootPtr)->left->cummulativeVal == addCummulativeVal || (*rootPtr)->left->cummulativeVal + previousValue == addCummulativeVal)
-      (*rootPtr)->relativeVal -= cummulativeValue;
+      if((*rootPtr)->left->cummulativeVal == addCummulativeVal)
+        (*rootPtr)->relativeVal -= cummulativeValue;
+      else if((*rootPtr)->left->cummulativeVal + previousValue == addCummulativeVal){
+        if(heightChanged != 0)
+          (*rootPtr)->relativeVal -= cummulativeValue;
+      }
       else{
         if((*rootPtr)->left->right !=NULL){
           int addRelativeVal = findAddRelativeVal(&(*rootPtr)->left,addCummulativeVal,previousValue+(*rootPtr)->left->cummulativeVal);
