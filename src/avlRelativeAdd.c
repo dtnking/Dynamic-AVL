@@ -49,8 +49,16 @@ int _avlRelativeAdd(Node **rootPtr, Node *nodeToAdd, int previousValue, int cumm
       }
       else{
         if((*rootPtr)->left->right !=NULL){
-          int addRelativeVal = findAddRelativeVal(&(*rootPtr)->left,addCummulativeVal,previousValue+(*rootPtr)->left->cummulativeVal);
-          (*rootPtr)->relativeVal -= addRelativeVal;
+          Node *addRelativeVal = findAddRelativeVal(&(*rootPtr)->left,addCummulativeVal,previousValue+(*rootPtr)->left->cummulativeVal);
+          if(addRelativeVal!=NULL){
+            if(heightChanged != 0)      //  To make sure no rotation occur
+              (*rootPtr)->relativeVal -= addRelativeVal->relativeVal;                     //
+            else{
+            int valToCompare = findMostRightCummVal(&(*rootPtr)->left,addCummulativeVal,previousValue+(*rootPtr)->left->cummulativeVal);
+              if(valToCompare == addCummulativeVal)
+                (*rootPtr)->relativeVal -= addRelativeVal->relativeVal;
+            }
+          }
         }
       }
     }

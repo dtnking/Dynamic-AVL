@@ -17,15 +17,15 @@ Node *createNode(Node *newNode,uint32_t val){
   return newNode;
 }
 
-int findAddRelativeVal(Node **node,int absoluteAddVal,int previousValue){
-  int storeV=0;
+Node *findAddRelativeVal(Node **node,int absoluteAddVal,int previousValue){
+  Node *temp = NULL;
   if((*node)->right!=NULL){
-    storeV=findAddRelativeVal(&(*node)->right,absoluteAddVal,previousValue+(*node)->right->cummulativeVal);
+    temp=findAddRelativeVal(&(*node)->right,absoluteAddVal,previousValue+(*node)->right->cummulativeVal);
 
   }
   if(previousValue == absoluteAddVal)
-    return (*node)->relativeVal;
-  return storeV;
+    return *node;
+  return temp;
 }
 
 int printRelValFromSmallest(Node **rootPtr){
@@ -46,6 +46,12 @@ int findSmallestRelativeVal(Node **rootPtr){
     return (*rootPtr)->cummulativeVal;
 }
 
+int findMostRightCummVal(Node **node,int absoluteAddVal,int previousValue){
+  if((*node)->right!=NULL)
+    findMostRightCummVal(&(*node)->right,absoluteAddVal,previousValue+(*node)->right->cummulativeVal);
+  else
+    return previousValue;
+}
 
 Node *findNearestReplacer(Node **rootPtr,int *heightFlag){
   Node *temp;
