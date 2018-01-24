@@ -13,6 +13,8 @@ CEXCEPTION_T ex;
 
 Node node1,node2,node3,node4,node5,node6,node7,node8,node9,node10;
 Node node11,node12,node13,node14,node15,node16,node17,node18,node19,node20;
+Node node28,node30,node40,node80,node31,node22,node34,node37,node45,node25;
+
 
 void setUp(void){}
 
@@ -209,7 +211,7 @@ void test_avlAdd_given_6_3_2_4_7_add_5_expect_rotate_left_right(void){
 //scenario 12
 void test_avlAdd_given_6_3_2_5_7_add_4_expect_rotate_left_right(void){
   Node *root = &node6;
-  initNode(&node6,&node3,&node7,-1,2,6);
+  initNode(&node6,&node3,&node7,-1,1,6);
   initNode(&node7,NULL,NULL,0,1,1);
   initNode(&node3,&node2,&node5,0,1,3);
   initNode(&node2,NULL,NULL,0,2,2);
@@ -372,6 +374,31 @@ void test_avlAdd_given_6_3_8_10_13_add_11_expect_rotate_left(void){
   createNode(&node11,11);
 
   avlRelativeAdd(&root,&node11);
+
+  TEST_ASSERT_EQUAL_PTR(&node10,root);
+  TEST_ASSERT_EQUAL_NODE(&node6,&node13,0,&node10,2,10);
+  TEST_ASSERT_EQUAL_NODE(&node3,&node8,0,&node6,3,6);
+  TEST_ASSERT_EQUAL_NODE(&node11,NULL,-1,&node13,2,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,3,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node8,2,2);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node11,1,1);
+}
+
+void test_avlAdd_(void){
+  Node *root = &node3;
+  initNode(&node3,&node1,&node20,1,1,3);
+  initNode(&node1,NULL,&node2,1,1,1);
+  initNode(&node2,NULL,NULL,0,1,1);
+  initNode(&node20,&node9,&node31,0,6,17);
+  initNode(&node9,&node6,&node14,0,3,6);
+  initNode(&node31,&node22,&node34,0,9,11);
+  initNode(&node6,NULL,NULL,0,3,3);
+  initNode(&node14,NULL,NULL,0,5,5);
+  initNode(&node22,NULL,&node25,0,2,2);
+  initNode(&node34,NULL,NULL,0,3,3);
+  createNode(&node25,25);
+
+  avlRelativeAdd(&root,&node25);
 
   TEST_ASSERT_EQUAL_PTR(&node10,root);
   TEST_ASSERT_EQUAL_NODE(&node6,&node13,0,&node10,2,10);
