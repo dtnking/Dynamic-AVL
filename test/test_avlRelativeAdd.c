@@ -11,12 +11,9 @@
 
 CEXCEPTION_T ex;
 
-Node node1,node2,node3,node4,node5,node6,node7,node8,node9,node10;
-Node node11,node12,node13,node14,node15,node16,node17,node18,node19,node20;
-Node node28,node30,node40,node80,node31,node22,node34,node37,node45,node25;
-
-
-void setUp(void){}
+void setUp(void){
+  initPrimitiveNode();
+}
 
 void tearDown(void){}
 
