@@ -12,10 +12,9 @@
 
 CEXCEPTION_T ex;
 
-Node node1,node2,node3,node4,node5,node6,node7,node8,node9,node10;
-Node node11,node12,node13,node14,node15,node16,node17,node18,node19,node20;
-
-void setUp(void){}
+void setUp(void){
+  initPrimitiveNode();
+}
 
 void tearDown(void){}
 
@@ -308,9 +307,10 @@ void test_removeSmallest_given_9_3_1_7_11_12_expected_remove_1(void){
   TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node12,1,1);
 }
 
-// Remove not available Node ---->  Exception Thrown
+// Remove not available Node ---->  return NULL
 void test_avlRelativeRemove_given_9_4_1_7_3_11_12_remove_2_expected_error_code_2(void){
   Node *root = &node9;
+  Node *result;
   initNode(&node9,&node4,&node11,-1,2,9);
   initNode(&node4,&node1,&node7,-1,1,4);
   initNode(&node11,NULL,&node12,1,2,2);
@@ -319,12 +319,9 @@ void test_avlRelativeRemove_given_9_4_1_7_3_11_12_remove_2_expected_error_code_2
   initNode(&node12,NULL,NULL,0,1,1);
   initNode(&node3,NULL,NULL,0,2,2);
 
-  Try{
-    avlRelativeRemove(&root,2);
-  }Catch(ex){
-    TEST_ASSERT_EQUAL(2,ex->errorCode);
-    dumpException(ex);
-  }
+  result = avlRelativeRemove(&root,2);
+
+  TEST_ASSERT_EQUAL_PTR(NULL,result);
   TEST_ASSERT_EQUAL_PTR(&node9,root);
   TEST_ASSERT_EQUAL_NODE(&node4,&node11,-1,&node9,2,9);
   TEST_ASSERT_EQUAL_NODE(NULL,&node12,1,&node11,2,2);
