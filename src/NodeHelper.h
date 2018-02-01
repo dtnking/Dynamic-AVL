@@ -10,6 +10,7 @@ void initNode(Node *node, Node *left, Node *right, int bf,uint32_t rv, uint32_t 
 Node *createNode(Node *newNode,uint32_t val);
 Node *findAddRelativeVal(Node **node,int absoluteAddVal,int previousValue);
 int printRelValFromSmallest(Node **rootPtr);
+int findMostRightCummVal(Node **node,int absoluteAddVal,int previousValue);
 int findSmallestRelativeVal(Node **rootPtr);
 Node *findNearestReplacer(Node **rootPtr,int *heightFlag);
 void initPrimitiveNode();
