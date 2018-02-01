@@ -28,7 +28,7 @@ void testAssertEqualNode(Node *left, Node *right, int bf, Node *node,int relVal,
       UNITY_TEST_FAIL(lineNo,error);
     }
   else if(bf != node->balanceFactor){
-    error = createMessage("Expected balance factor to be 0x%p, but was %p",  \
+    error = createMessage("Expected balance factor to be %i, but was %i",  \
                           bf,node->balanceFactor);
     UNITY_TEST_FAIL(lineNo,error);
   }
@@ -38,12 +38,12 @@ void testAssertEqualNode(Node *left, Node *right, int bf, Node *node,int relVal,
     UNITY_TEST_FAIL(lineNo,error);
   }
   else if(node->relativeVal != relVal){
-    error = createMessage("Expected relative value to be 0x%p, but was %p",  \
+    error = createMessage("Expected relative value to be %i, but was %i",  \
                             relVal,node->relativeVal);
     UNITY_TEST_FAIL(lineNo,error);
   }
   else if(node->cummulativeVal != cumVal){
-    error = createMessage("Expected cummulative value to be 0x%p, but was %p",  \
+    error = createMessage("Expected cummulative value to be %i, but was %i",  \
                             cumVal,node->cummulativeVal);
     UNITY_TEST_FAIL(lineNo,error);
   }
