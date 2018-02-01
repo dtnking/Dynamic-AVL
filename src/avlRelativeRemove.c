@@ -5,7 +5,7 @@ Node *avlRemoveWithoutAffectingRelativeVal(Node **rootPtr,int delData){
   int previousValue = 0;
   Node *dataRemove = _avlRemoveWithoutAffectingRelativeVal(rootPtr,delData,previousValue,&heightChange);
   if(dataRemove == NULL)
-      Throw(createException("Couldn't find the node", NODE_NA));
+      return NULL;
   else
       return dataRemove;
 }

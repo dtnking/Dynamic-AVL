@@ -1,7 +1,7 @@
 #ifndef _EXCEPTION_H
 #define _EXCEPTION_H
 
-#define NODE_NA						2
+#define NODE_ADD_EXIST 			1
 
 typedef struct Exception Exception;
 typedef Exception* ExceptionPtr;
