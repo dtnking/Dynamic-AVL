@@ -98,8 +98,9 @@ Node *findNearestReplacer(Node **rootPtr,int *heightFlag){
     }
   if((*rootPtr)->left!=NULL){
     temp = findNearestReplacer(&(*rootPtr)->left,heightFlag);
+    (*rootPtr)->cummulativeVal -= temp->relativeVal;
     if(*heightFlag == 1){
-      (*rootPtr)->cummulativeVal = (*rootPtr)->relativeVal;
+
       (*rootPtr)->balanceFactor += 1;
       *heightFlag = avlBalanceLeftTree(rootPtr);
       if((*rootPtr)->balanceFactor != 0)
