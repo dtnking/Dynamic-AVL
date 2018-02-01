@@ -29,6 +29,17 @@ void test_manual_add_4_2_15_10_30_80_28_40_3(void){
   avlRelativeAdd(&root,&node3);
 
   printRelValFromSmallest(&root);
+
+  TEST_ASSERT_EQUAL_PTR(&node15,root);
+  TEST_ASSERT_EQUAL_NODE(&node4,&node30,0,&node15,5,15);
+  TEST_ASSERT_EQUAL_NODE(&node2,&node10,-1,&node4,1,4);
+  TEST_ASSERT_EQUAL_NODE(&node28,&node80,1,&node30,2,15);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node3,1,&node2,2,2);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node10,6,6);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node28,13,13);
+  TEST_ASSERT_EQUAL_NODE(&node40,NULL,-1,&node80,40,50);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node3,1,1);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node40,10,10);
 }
 
 
@@ -51,4 +62,21 @@ void test_manual_given_random_node(void){
   avlRelativeAdd(&root,&node17);
 
   printRelValFromSmallest(&root);
+
+  TEST_ASSERT_EQUAL_PTR(&node20,root);
+  TEST_ASSERT_EQUAL_NODE(&node3,&node37,-1,&node20,3,20);
+  TEST_ASSERT_EQUAL_NODE(&node1,&node9,1,&node3,1,3);
+  TEST_ASSERT_EQUAL_NODE(&node31,&node40,0,&node37,3,17);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node2,1,&node1,1,1);
+  TEST_ASSERT_EQUAL_NODE(&node6,&node14,1,&node9,3,6);
+  TEST_ASSERT_EQUAL_NODE(&node22,&node34,0,&node31,9,11);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node45,1,&node40,3,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node2,1,1);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node6,3,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,&node17,1,&node14,5,5);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node22,2,2);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node34,3,3);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node45,5,5);
+  TEST_ASSERT_EQUAL_NODE(NULL,NULL,0,&node17,3,3);
+
 }
